@@ -6,9 +6,10 @@
         Blocking();
     }
 
+    private static /*volatile*/ bool complete = false;
+
     private static void Blocking()
     {
-        bool complete = false;
         var t = new Thread(() =>
         {
             bool toggle = false;
